@@ -1,0 +1,7 @@
+print("my name is Nishaj Ronak")
+print("my age is 08")
+print("my favroite character is spiderman")
+print("my favroite food is ruti dim")
+print("my favroite car toy is hot wheels")
+print("my car model name is prius")
+print("i named my car spider car")

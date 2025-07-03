@@ -1,16 +1,19 @@
-medical_cause = input("Do you have medical cause? (yes/no): ")
-
-
-attendance = float(input("Enter your attendance percentage: "))
-
-
-if medical_cause.lower() == "yes":
-    if attendance >= 65:
-        print("✅ You are eligible for the exam (medical reason).")
+cause = str(input("DO YOU HAVE MEDICAL CAUSE?(yes/no):")).lower()
+if cause == "yes":
+    percentage = int(input("ENTER YOUR ATTENDANCE PERCENTEGE:"))
+    if percentage >= 60:
+        print("YOU ARE ELIGIBLE FOR THE EXAM")
     else:
-        print("❌ Not eligible. Attendance too low even with medical reason.")
+        print("YOU AREN'T ELIGIBLE FOR THE EXAM")
+    
+elif cause == "no":
+    percentage = int(input("ENTER YOUR ATTENDANCE PERCENTAGE:"))
+    
+    if percentage >= 75:
+        print("YOU ARE ELIGIBLE FOR THE EXAM")
+    
+    else:
+        print("YOU ARE AREN'T ELIGIBLE FOR THE EXAM")
+        
 else:
-    if attendance >= 80:
-        print("✅ You are eligible for the exam.")
-    else:
-        print("❌ Not eligible. Attendance must be at least 80%.")
+    print("invalid input")

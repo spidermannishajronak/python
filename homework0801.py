@@ -1,4 +1,4 @@
-n = int(input("ENTER last NUMBER:"))
+n = int(input("ENTER ODD NUMBER:"))
 
-for odd in range (n+1):
-    print(odd)
+for i in range(1, n+1, 2):
+    print(i)

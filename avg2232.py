@@ -1,0 +1,9 @@
+a = int(input("ENTER 1st NUMBER:"))
+b = int(input("ENTER 2nd NUMBER:"))
+c = int(input("ENTER 3rd NUMBER:"))
+
+total = a+b+c
+
+avg = total/3   
+
+print("result:" , avg)

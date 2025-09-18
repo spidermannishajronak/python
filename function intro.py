@@ -1,0 +1,17 @@
+def information(name,age,grade):
+    print("MY NAME IS:" , name)
+    print("MY AGE IS:" , age)
+    print("I READ IN GRADE:" ,grade)
+    
+information("NISHAJ" , 8 , 3)
+information("JARAN" , 8 , 2)
+information("HISSAN" , 9 , 3)
+information("TASFIA" , 10 , 4)
+information("ZYYAN" , 9 , 3)
+information("FUAD" , 9 , 3)
+information("ARRAF" , 10 , 3)
+information("ARISH" , 8 , 3)
+information("TAKIM" , 9 , 3)
+information("AYMAN" , 8 , 3)
+information("TONOK" , 9 , 3)
+information("SHAIMAN" , 7 , 3)

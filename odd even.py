@@ -1,7 +1,7 @@
-n = int(input("Enter a number:"))
+n = int(input("ENTER A NUMBER:"))
 
-if n%2 == 0:
-    print("The number is even")
+if n %2 == 0:
+    print("THE NUMBER IS EVEN")
     
 else:
-    print("The number is odd")
+    print("THE NUMBER IS ODD")   

@@ -53,7 +53,7 @@ def game_loop():
             elif event.key in (pygame.K_a, pygame.K_LEFT) and direction != (1, 0):
                 direction = (-1, 0)        
                 
-            elif event.key in (pygame.K_d, pygame.K_UP) and direction != (-1, 0):
+            elif event.key in (pygame.K_d, pygame.K_RIGHT) and direction != (-1, 0):
                 direction = (1, 0)        
             elif event.key == pygame.K_p:  
                 paused = not paused
@@ -63,7 +63,7 @@ def game_loop():
             
         if paused:
             SCREEN.fill((0 , 0 , 0))
-            show_text("GAME IS PAUSED.PRESS P TO RESUME" , 36, (255, 255, 255) , (WIDTH // 2 , HEIGHT) // 2)
+            show_text("GAME IS PAUSED.PRESS P TO RESUME" , 36, (255, 255, 255) , (WIDTH // 2 , HEIGHT // 2))
             pygame.display.flip()
             CLOCK.tick(10)
             continue
@@ -92,28 +92,28 @@ def game_loop():
                         sys.exit()
                 CLOCK.tick(10)    
                 
-            snake.insert(0, head) 
+        snake.insert(0, head) 
             
-            if head == food:
-                score += 1
+        if head == food:
+            score += 1
                 
-            food = random_food(snake) 
-            if score % 5 == 0:
-                speed += 1
-            else:
-                snake.pop()
+        food = random_food(snake) 
+        if score % 5 == 0:
+            speed += 1
+        else:
+            snake.pop()
                 
                 
                 
-            SCREEN.fill((0, 0 ,0))
-            draw_rect(food,(225, 0, 0))
-            for i, segment in enumerate(snake):
-                color = (0, 200, 0) if i == 0 else (0, 120, 0)
-                draw_rect(segment, color)
+        SCREEN.fill((0, 0 ,0))
+        draw_rect(food,(225, 0, 0))
+        for i, segment in enumerate(snake):
+            color = (0, 200, 0) if i == 0 else (0, 120, 0)
+            draw_rect(segment, color)
                 
-            show_text(f"Score:{score}" , 28, (255, 255 ,255), (80,20))
-            pygame.display.flip()
-            CLOCK.tick(speed)
+        show_text(f"Score:{score}" , 28, (255, 255 ,255), (80,20))
+        pygame.display.flip()
+        CLOCK.tick(speed)
             
 if __name__ == "__main__":
     while True:

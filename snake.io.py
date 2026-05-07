@@ -13,8 +13,8 @@ CLOCK = pygame.time.Clock()
 FONT = pygame.font.SysFont(None , 36)
 
 def draw_rect(pos,color):
-    r = pygame.rect(pos[0] * CELL_SIZE, pos,[1] * CELL_SIZE, CELL_SIZE, CELL_SIZE)
-  
+    r = pygame.rect(pos[0] * CELL_SIZE, pos[1] * CELL_SIZE, CELL_SIZE, CELL_SIZE)
+    pygame.draw.rect(SCREEN, color, r)
   
 def random_food(snake):
     while True:
@@ -106,17 +106,17 @@ def game_loop():
                 
                 
             SCREEN.fill((0, 0 ,0))
-            draw_rect(food(225, 0, 0))
+            draw_rect(food,(225, 0, 0))
             for i, segment in enumerate(snake):
                 color = (0, 200, 0) if i == 0 else (0, 120, 0)
                 draw_rect(segment, color)
                 
-            show_text(f"Score:{score}" , 28, (255, 255 ,255) (80,20))
+            show_text(f"Score:{score}" , 28, (255, 255 ,255), (80,20))
             pygame.display.flip()
             CLOCK.tick(speed)
             
-        if __name__ == "__main__":
-            while True:
-                restart = game_loop
-                if not restart():
-                    break
+if __name__ == "__main__":
+    while True:
+        restart = game_loop()
+        if not restart():
+            break

@@ -13,7 +13,7 @@ CLOCK = pygame.time.Clock()
 FONT = pygame.font.SysFont(None , 36)
 
 def draw_rect(pos,color):
-    r = pygame.rect(pos[0] * CELL_SIZE, pos[1] * CELL_SIZE, CELL_SIZE, CELL_SIZE)
+    r = pygame.Rect(pos[0] * CELL_SIZE, pos[1] * CELL_SIZE, CELL_SIZE, CELL_SIZE)
     pygame.draw.rect(SCREEN, color, r)
   
 def random_food(snake):
@@ -50,10 +50,10 @@ def game_loop():
             elif event.key in (pygame.K_s, pygame.K_DOWN) and direction != (0, -1):
                 direction = (0, 1)       
             
-            elif event.key in (pygame.k_a, pygame.K_LEFT) and direction != (1, 0):
+            elif event.key in (pygame.K_a, pygame.K_LEFT) and direction != (1, 0):
                 direction = (-1, 0)        
                 
-            elif event.key in (pygame.k_d, pygame.K_UP) and direction != (-1, 0):
+            elif event.key in (pygame.K_d, pygame.K_UP) and direction != (-1, 0):
                 direction = (1, 0)        
             elif event.key == pygame.K_p:  
                 paused = not paused
@@ -62,7 +62,7 @@ def game_loop():
             
             
         if paused:
-            SCREEN.FILL((0 , 0 , 0))
+            SCREEN.fill((0 , 0 , 0))
             show_text("GAME IS PAUSED.PRESS P TO RESUME" , 36, (255, 255, 255) , (WIDTH // 2 , HEIGHT) // 2)
             pygame.display.flip()
             CLOCK.tick(10)
@@ -85,9 +85,9 @@ def game_loop():
                     pygame.quit()
                     sys.exit()
                 if e.type == pygame.KEYDOWN:
-                    if e.key == pygame.k_r:
+                    if e.key == pygame.K_r:
                         return True
-                    if e.key == pygame.k_q:
+                    if e.key == pygame.K_q:
                         pygame.quit()
                         sys.exit()
                 CLOCK.tick(10)    

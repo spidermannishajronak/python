@@ -10,7 +10,7 @@ def get_player_input():
             if 1 <= guess <= 100:
                 return guess
             else:
-                print("PLEASE ENTER A NUMBER IN THE RANGE OF 1 TO 10")
+                print("PLEASE ENTER A NUMBER IN THE RANGE OF 1 TO 100")
         except ValueError:
             print("invalid input.pls provide a valid number")     
             
